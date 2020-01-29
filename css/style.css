@@ -1,0 +1,78 @@
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+/* BASIC RESET
+This is an universal selector, which takes all the elements and will apply this declaration the them all  
+*/
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: borders and paddings are no longer added to total w & h */
+  box-sizing: border-box;
+}
+
+/* properties related to fonts are usually inhereted, so we use body and this will then be inhereted by all the child elements */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    #7ed56fc3, 
+    #28b485d1),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  /* these 2 % are related to parent element */
+  top: 40%;
+  left: 51%;
+  /* these 50% are no longer related to parente element, but to element itself */
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* block elements occupy the entire width available and create line breaks */
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+}
