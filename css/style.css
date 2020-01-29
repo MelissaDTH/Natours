@@ -122,6 +122,18 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* :link is a pseudo class, this is a state of the button selector */
 .btn:link,
 .btn:visited {
@@ -131,19 +143,53 @@ body {
   /* using inline-block, this way the box model works on this element as if  just a normal block element. ALways do this if we want to use padding*/
   display: inline-block;
   border-radius: 100px;
-  transition: all;
+  transition: all .2s;
+  position: relative;
 }
 
 .btn:hover {
   /* using the upsilon direction here, negative value because upsilon goes from top to bottom */
   transform: translateY(-3px);
+  /* first value is x axis, second upsilon where we want it 10px down and third is the blur */
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* here we have to set content (can be empty), otherwise it won't appear */
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  /* the 4th value is the delay */
+  animation: moveInBottom 0.5s ease-out .75s;
+  /* will automatically apply styles up to 0% before animation */
+  animation-fill-mode: backwards; 
 }
