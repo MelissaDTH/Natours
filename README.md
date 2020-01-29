@@ -4,9 +4,6 @@
 
 Natours is a website about all kinds of tours in nature. It's designed with **float layout** in vanilla CSS.
 
-It showcases different features with:
-
-
 ## Table of contents
 
 * [Technologies used](#technologies-used)
@@ -14,8 +11,8 @@ It showcases different features with:
 
 ## Technologies used
 
-- Sass
 - CSS
+- Sass
 - Responsive design
 - Browser support
 - Animations done with CSS 
