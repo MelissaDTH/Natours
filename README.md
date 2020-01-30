@@ -19,5 +19,4 @@ Natours is a website about all kinds of tours in nature. It's designed with **fl
 
 ## Credits
 
-
 This website is designed by Jonas Schmedtmann and he created a great and informative Udemy [course](https://www.udemy.com/course/advanced-css-and-sass/)! 
