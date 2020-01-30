@@ -4,7 +4,6 @@
 
 Natours is a smal landing page and a mockup website about tours in nature. It's designed with **float layout** in vanilla CSS.
 
-
 ## Table of contents
 
 * [Technologies used](#technologies-used)
@@ -19,6 +18,5 @@ Natours is a smal landing page and a mockup website about tours in nature. It's 
 - Animations done with CSS 
 
 ## Credits
-
 
 This website is designed by Jonas Schmedtmann and he created a great and informative Udemy [course](https://www.udemy.com/course/advanced-css-and-sass/)! 
