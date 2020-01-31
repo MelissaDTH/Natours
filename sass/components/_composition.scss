@@ -1,0 +1,42 @@
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 0.2rem;
+    // position element is placed according to reference to parent element -> so set position in parent to relative
+    position: absolute;
+    z-index: 1;
+    transition: all .2;
+    outline-offset: 1rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary-dark;
+      transform: scale(1.05) translateY(-.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      // z-index specifies stack order, one with greater stack order is in front of element with lower order
+      z-index: 2;
+    }
+  }
+  
+  //.composition:hover composition__photo:not(:hover)
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95);
+  }
+}

@@ -7,8 +7,8 @@
   box-sizing: inherit;
 }
 
-html {
-  font-size: 62.5%; /* 1 rem is the root size; 10px. But never change root size to 10px */
+html { // this defines what 1 rem is
+  font-size: 62%; /* 1 rem is the root size; 10px. But never change root size to 10px */
 }
 
 body {
