@@ -1,0 +1,85 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* using inline-block, this way the box model works on this element as if  just a normal block element. ALways do this if we want to use padding*/
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+  
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* first value is x axis, second upsilon where we want it 10px down and third is the blur */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: #fff;
+    }
+  }
+  
+  /* here we have to set content (can be empty), otherwise it won't appear */
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  
+  &--animated {
+    /* the 4th value is the delay */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* will automatically apply styles up to 0% before animation */
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // now can use box properties like padding
+    text-decoration: none;
+    border-bottom: 0.1rem solid $color-primary;
+    padding: .3rem;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-.2rem);
+}
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}
